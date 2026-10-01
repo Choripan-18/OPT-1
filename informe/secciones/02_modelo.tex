@@ -1,0 +1,62 @@
+\section{Modelamiento del problema}
+Formule expl\'icitamente el modelo matem\'atico utilizando la materia vista en
+clases. El documento debe incluir, como m\'inimo:
+\begin{itemize}
+	\item los conjuntos e \textit{\'indices} utilizados;
+	\item los par\'ametros, sus unidades, fuentes y rangos de valores;
+	\item las variables de decisi\'on y sus dominios (por ejemplo, binarias,
+	enteras o continuas);
+	\item la funci\'on objetivo, indicando si se minimiza o maximiza, y
+	explicando el significado de cada t\'ermino;
+	\item todas las restricciones del modelo, acompa\~nadas de una breve
+	explicaci\'on de su significado f\'isico u operativo;
+	\item las condiciones de dominio y cualquier supuesto adicional necesario.
+\end{itemize}
+(30 puntos)
+\newline
+\newline
+\begin{enumerate}
+    \item Conjuntos e índices
+    \begin{itemize}
+        \item $I:$ Conjunto de todos los elementos constructivos de la vivienda.
+        \item $I^{F}:$ Conjunto de elementos fijos.
+        \item $I^{O}:$ Conjunto de elementos optimizables.
+        \item $J_{i}:$ Conjunto de soluciones constructivas disponibles en el catálogo para el elemento i.
+        \item $i:$ Elemento constructivo.
+        \item $j:$ Alternativa constructiva disponible para el elemento i.
+    \end{itemize}
+    \item Parámetros
+    \begin{itemize}
+        \item $A_{i} > 0:$ Área de cada elemento i [$m^{2}$].
+        \item $C_{ij} \geq 0:$ Costo de cada alternativa j en el elemento i [$\$/m^{2}$]. 
+        \item $U_{ij} > 0:$ Transmitancia térmica de la alternativa j para el elemento i [$W/(m^{2}K)$].
+        \item $C_{i}^{F} \geq 0:$ Costo de los elementos i fijos [$\$/m^{2}$]. 
+        \item $U_{i}^{F} > 0:$ Transmitancia térmica de los elementos i fijos [$W/(m^{2}K)$].
+        \item $U^{max} > 0:$ Límite máximo de transmitancia [$W/(m^{2}K)$].
+    \end{itemize}
+    \item Variables de decisión
+    \begin{itemize}
+        \item $x_{ij} = 1$ si se selecciona la alternativa j para el elemento i, $0$ en otro caso.
+        \newline $x_{ij} \in \{0, 1\}$
+    \end{itemize}
+    \item Función objetivo
+    \begin{itemize}
+        \item $min Z = \sum_{i \in I^{O}} \sum_{j \in J_{i}} A_{i}C_{ij}x_{ij} + C^{F}$
+        \newline
+        \newline
+        Sumatoria $j \in J_{i}$: Recorre todas las alternativas posibles para un elemento.
+        \newline
+        Sumatoria $i \in I^{O}$: Recorre todos los elementos optimizables.
+    \end{itemize}
+    \item Restricciones
+    \begin{itemize}
+        \item Cada elemento optimizable debe tener exactamente una solución constructiva seleccionada:
+        \newline $\sum_{j \in J_{i}} x_{ij} = 1, \forall i \in I^{O}$
+        \item La transmitancia térmica promedio ponderada no puede superar el umbral de transmitancia máxima:
+        \newline $\sum_{i \in I^{F}} A_{i}U_{i}^{F} + \sum_{i \in I^{O}} \sum_{j \in J_{i}} A_{i}U_{ij}x_{ij} \leq U^{max} \sum_{i \in I} A_{i}$
+    \end{itemize}
+    \item Condiciones de dominio
+    \begin{itemize}
+        \item $x_{ij} \in \{0,1\} \forall i \in I^{O}, j \in J_{i}$
+    \end{itemize}
+\end{enumerate}
