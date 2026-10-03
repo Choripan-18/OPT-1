@@ -1,1 +1,255 @@
+\section{Generador de Instancias}
+El procedimiento para la generación de las 15 instancias factibles solicitadas se implementó en Python, estructurando el código de acuerdo con las especificaciones del problema.
+\newline
+\newline
+\begin{enumerate}
+\item Algoritmo y parámetros configurables
+\begin{itemize}
+\item \textbf{Entradas:} Tipo de instancia (Pequeña, Mediana o Grande) y una semilla de aleatoriedad (\texttt{seed = 50}).
+\item \textbf{Salidas:} Un diccionario estructurado con las dimensiones físicas, el catálogo de alternativas, la configuración de los elementos (fijos o libres) y el umbral $U^{max}$.
+\item \textbf{Parámetros configurables:} Se definieron rangos físicos para la vivienda (ej. altura entre 2.3 y 2.8 m), rangos de transmitancia térmica ($0.2$ a $5.0 \, W/m^2K$) y rangos de costo de materiales ($5000$ a $65000 \, \$/m^2$).
+\end{itemize}
+\item Distribuciones y aleatoriedad reproducible
+\begin{itemize}
+\item Se utilizó la librería estándar \texttt{random} fijando la semilla al inicio de la ejecución para garantizar que los resultados sean exactamente reproducibles.
+\item Las dimensiones físicas, áreas, valores de transmitancia $U$ y costos se generaron utilizando distribuciones uniformes continuas (\texttt{random.uniform}).
+\item La cantidad de categorías activas, alternativas por catálogo y número de elementos libres se definieron mediante distribuciones uniformes discretas (\texttt{random.randint}), acotadas estrictamente por los rangos de la Tabla 1 del enunciado.
+\end{itemize}
+\item Tamaño, estructura y almacenamiento
+\begin{itemize}
+\item El tamaño del problema escala con el tipo de instancia. Por ejemplo, las instancias grandes consideran 5 categorías, entre 26 y 50 alternativas de materiales, y entre 9 y 15 elementos libres a optimizar.
+\item Los datos se almacenan en tiempo de ejecución mediante diccionarios y listas, lo que permite asociar fácilmente un identificador, área y estado ("fijo" o "libre") a cada elemento constructivo.
+\end{itemize}
+\item Condiciones para garantizar factibilidad técnica
+\begin{itemize}
+\item Para asegurar que el modelo matemático no enfrente un espacio de soluciones vacío, se implementó una rutina que simula el escenario de máxima eficiencia térmica posible.
+\item Para cada elemento libre, se busca temporalmente en el catálogo la alternativa con menor transmitancia (mejor aislamiento) y se calcula la transmitancia global equivalente mínima ($U_{eq\_min}$).
+\end{itemize}
+\item Procedimiento de validación
+\begin{itemize}
+\item El parámetro de exigencia $U^{max}$ se calcula añadiendo un margen aleatorio (holgura entre 10\% y 35\%) a la diferencia entre el peor escenario de aislamiento y el escenario $U_{eq\_min}$.
+\item Toda instancia se valida verificando estrictamente la condición lógica $U^{max} \geq U_{eq\_min}$, garantizando que los materiales más eficientes siempre cumplan la norma.
+\end{itemize}
+\item Tabla resumen de instancias
+\begin{itemize}
+\item A continuación, se detallan las propiedades principales de las 15 instancias de prueba generadas:
+\end{itemize}
+\end{enumerate}
 
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{ID Instancia} & \textbf{Tipo} & \textbf{Categorías} & \textbf{Elem. Libres} & \textbf{$U^{max}$} & \textbf{Factible} \\ \hline
+
+Pequena\_1 & Pequena & 3 & 4 & 3.821 & Sí \\ \hline
+Pequena\_2 & Pequena & 3 & 4 & 2.711 & Sí \\ \hline
+Pequena\_3 & Pequena & 3 & 4 & 2.241 & Sí \\ \hline
+Pequena\_4 & Pequena & 4 & 3 & 2.502 & Sí \\ \hline
+Pequena\_5 & Pequena & 3 & 2 & 1.762 & Sí \\ \hline
+Mediana\_6 & Mediana & 5 & 7 & 1.567 & Sí \\ \hline
+Mediana\_7 & Mediana & 5 & 5 & 2.422 & Sí \\ \hline
+Mediana\_8 & Mediana & 5 & 5 & 2.463 & Sí \\ \hline
+Mediana\_9 & Mediana & 5 & 7 & 2.501 & Sí \\ \hline
+Mediana\_10 & Mediana & 5 & 6 & 1.788 & Sí \\ \hline
+Grande\_11 & Grande & 5 & 11 & 1.891 & Sí \\ \hline
+Grande\_12 & Grande & 5 & 14 & 2.135 & Sí \\ \hline
+Grande\_13 & Grande & 5 & 13 & 2.478 & Sí \\ \hline
+Grande\_14 & Grande & 5 & 13 & 1.527 & Sí \\ \hline
+Grande\_15 & Grande & 5 & 13 & 2.16 & Sí \\ \hline
+
+\end{tabular}
+\caption{Resumen de las 15 instancias factibles generadas.}
+\label{tab:resumen_instancias}
+\end{table}
+
+\newpage
+
+\begin{enumerate}
+\setcounter{enumi}{6}
+\item Código completo del generador
+\begin{itemize}
+\item Se adjunta el script ejecutado para la creación y validación de los datos.
+\end{itemize}
+\end{enumerate}
+
+\begin{lstlisting}
+import random
+
+tiposInstancias = ["Pequena", "Mediana", "Grande"]
+categorias = ["Muro", "Techo", "Piso", "Ventana", "Puerta"]
+totalInstancias = 15
+
+#Cambiar la semilla para obtener diferentes instancias
+semilla = 50
+random.seed(semilla)
+
+instanciasPorTipo = 5
+
+uMax = {
+    "holgura_min": 0.1, 
+    "holgura_max": 0.35 
+}
+
+categoriasDeElementos = {
+    "Pequena": (3, 4),
+    "Mediana": (5, 5),
+    "Grande": (5, 5)
+}
+
+alternativasPorCategoria = {
+    "Pequena": (5, 10),
+    "Mediana": (11, 25),
+    "Grande": (26, 50)
+}
+
+elementosLibresPorTipo = {
+    "Pequena": (2, 4),
+    "Mediana": (5, 8),
+    "Grande": (9, 15)
+}
+
+largoCasa = {"min": 5.0, "max": 12.0}
+anchoCasa = {"min": 5.0, "max": 10.0}
+alturaCasa = {"min": 2.3, "max": 2.8}
+areaCasa = {"min": 25.0, "max": 120.0}
+
+areaPorCategoria = {
+    "Muro": (8.0, 25.0),
+    "Techo": (25.0, 120.0),
+    "Piso": (25.0, 120.0),
+    "Ventana": (1.0, 3.5),
+    "Puerta": (1.6, 2.5)
+}
+
+transmitancia = {"min": 0.2, "max": 5.0}
+costo = {"min": 5000, "max": 65000}
+
+def generarVivienda():
+    largo = random.uniform(largoCasa["min"], largoCasa["max"])
+    ancho = random.uniform(anchoCasa["min"], anchoCasa["max"])
+    altura = random.uniform(alturaCasa["min"], alturaCasa["max"])
+    area = largo * ancho
+    volumen = area * altura
+    return round(largo, 2), round(ancho, 2), round(altura, 2), round(area, 2), round(volumen, 2)
+
+def generarElementos(tipoInstancia, largo, ancho, altura):
+    elementos = []
+    num_cat = random.randint(categoriasDeElementos[tipoInstancia][0], categoriasDeElementos[tipoInstancia][1])
+    cats_seleccionadas = random.sample(categorias, num_cat)
+    
+    min_libres = elementosLibresPorTipo[tipoInstancia][0]
+    max_libres = elementosLibresPorTipo[tipoInstancia][1]
+    total_libres_objetivo = random.randint(min_libres, max_libres)
+    
+    cantidad_total_elementos = max(15, total_libres_objetivo + 5)
+    
+    for i in range(cantidad_total_elementos):
+        cat = random.choice(cats_seleccionadas)
+        area_el = random.uniform(areaPorCategoria[cat][0], areaPorCategoria[cat][1])
+        elementos.append({
+            "id": f"{cat}_{i+1}", 
+            "categoria": cat, 
+            "area": round(area_el, 2), 
+            "estado": "fijo"
+        })
+        
+    indices_libres = random.sample(range(len(elementos)), total_libres_objetivo)
+    for i in indices_libres:
+        elementos[i]["estado"] = "libre"
+        
+    return elementos, cats_seleccionadas
+
+def generarCatalogo(tipoInstancia, cats_seleccionadas):
+    catalogo = {}
+    for cat in cats_seleccionadas:
+        num_alt = random.randint(alternativasPorCategoria[tipoInstancia][0], alternativasPorCategoria[tipoInstancia][1])
+        us = [round(random.uniform(transmitancia["min"], transmitancia["max"]), 2) for _ in range(num_alt)]
+        costos = [round(random.uniform(costo["min"], costo["max"]), 0) for _ in range(num_alt)]
+        
+        us.sort(reverse=True)
+        costos.sort()
+        
+        catalogo[cat] = [{"id_alt": f"Alt_{j+1}", "U": u, "costo": c} for j, (u, c) in enumerate(zip(us, costos))]
+        
+    return catalogo
+
+def generarUMax(elementos, catalogo):
+    area_total = sum(el["area"] for el in elementos)
+    suma_u_min = 0
+    suma_u_max = 0
+    
+    for el in elementos:
+        cat = el["categoria"]
+        valores_u_cat = [alt["U"] for alt in catalogo[cat]]
+        u_mejor = min(valores_u_cat)
+        u_peor = max(valores_u_cat)
+        
+        if el["estado"] == "libre":
+            suma_u_min += u_mejor * el["area"]
+            suma_u_max += u_peor * el["area"]
+        else:
+            u_fijo = random.choice(valores_u_cat)
+            el["U_fijo"] = u_fijo 
+            suma_u_min += u_fijo * el["area"]
+            suma_u_max += u_fijo * el["area"]
+            
+    u_eq_min = suma_u_min / area_total
+    u_eq_max = suma_u_max / area_total
+    
+    holgura = random.uniform(uMax["holgura_min"], uMax["holgura_max"])
+    umax_calculado = u_eq_min + holgura * (u_eq_max - u_eq_min)
+    
+    return round(umax_calculado, 3), round(u_eq_min, 3)
+
+def validarInstancia(umax_calculado, u_eq_min):
+    return umax_calculado >= u_eq_min
+
+def generarInstancia(tipoInstancia, id_instancia):
+    largo, ancho, altura, area, volumen = generarVivienda()
+    elementos, cats_seleccionadas = generarElementos(tipoInstancia, largo, ancho, altura)
+    catalogo = generarCatalogo(tipoInstancia, cats_seleccionadas)
+    
+    umax_calculado, u_eq_min = generarUMax(elementos, catalogo)
+    es_factible = validarInstancia(umax_calculado, u_eq_min)
+    
+    return {
+        "id_instancia": f"{tipoInstancia}_{id_instancia}",
+        "tipo": tipoInstancia,
+        "dimensiones": {"area": area, "volumen": volumen},
+        "UMax_exigido": umax_calculado,
+        "factible": es_factible,
+        "catalogo": catalogo,
+        "elementos": elementos
+    }
+
+def generarInstancias():
+    lista_instancias = []
+    id_contador = 1
+    
+    for tipo in tiposInstancias:
+        for _ in range(instanciasPorTipo):
+            instancia = generarInstancia(tipo, id_contador)
+            lista_instancias.append(instancia)
+            id_contador += 1
+            
+    return lista_instancias
+
+# Main
+if __name__ == "__main__":
+    instancias_finales = generarInstancias()
+    
+    with open("instancias.txt", "w", encoding="utf-8") as archivo:
+        for inst in instancias_finales:
+            id_latex = inst['id_instancia'].replace("_", "\\_")
+            tipo = inst['tipo']
+            num_cat = len(inst['catalogo'])
+            num_libres = sum(1 for el in inst['elementos'] if el['estado'] == 'libre')
+            umax = inst['UMax_exigido']
+            factible = "S\\'i" if inst['factible'] else "No"
+            
+            linea = f"{id_latex} & {tipo} & {num_cat} & {num_libres} & {umax} & {factible} \\\\ \\hline\n"
+            archivo.write(linea)
+            
+    print("Archivo 'instancias.txt' generado.")
+\end{lstlisting}
