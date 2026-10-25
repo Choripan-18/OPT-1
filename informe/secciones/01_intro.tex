@@ -1,15 +1,16 @@
 \section{Introducci\'on}
-Describa en qu\'e consiste el problema, la necesidad que lo motiva, el contexto de
-aplicaci\'on y el objetivo general del proyecto. Incluya los supuestos principales
-adoptados para representar la situaci\'on real. (10 puntos)
-\newline
-\newline
-Más del 60\% de las viviendas en Chile carece de un aislamiento térmico adecuado, incrementando costos de calefacción e impacto ambiental. Dentro del contexto de la solución real presentada en conjunto con la oficina de arquitectura Acua Plan, el objetivo del proyecto es encontrar el modelo que minimice el costo total de inversión en materiales, mientras cumpla con requerimientos de desempeño térmico y restricciones del usuario.
+Más del 60\% de las viviendas en Chile carece de un aislamiento térmico adecuado, el calor no se retiene dentro de las viviendas y, al mismo tiempo, entra en exceso, lo que provoca temperaturas internas muy bajas en invierno y muy altas en verano. Esto es una problemática de alta prioridad para las comunidades pues incrementa los costos de calefacción y refrigeración en las viviendas, además de aportar un grave impacto ambiental, en forma de consumo energético y emisiones contaminantes, por el uso sostenido de tecnologías de climatización.
+\newline La necesidad que motiva este proyecto es la oportunidad de entregar a los usuarios una decisión informada acerca de los materiales y soluciones térmicas que se utilizan en sus hogares, cumpliendo con las restricciones de la Calificación Energética de Viviendas. Las soluciones comprenden variantes con diferente transmitancia térmica de muros, pisos, techos, ventanas y puertas.
+\newline Este proyecto se inspira en una solución real existente, el sistema Bio Planner, desarrollada por la oficina de arquitectura Acua Plan y presentada en la Feria de Software (FESW) del año 2025. El objetivo del proyecto es encontrar el modelo que minimice el costo total de inversión en materiales, mientras cumpla con requerimientos de desempeño térmico y restricciones de elementos constructivos y materiales impuestas por el usuario.
 \newline
 \newline
 Supuestos del modelo:
 \begin{enumerate}
-    \item Las áreas, costos y transmitancias son conocidas.
-    \item Cada elemento optimizable utiliza exactamente una alternativa, no combina soluciones parciales
-    \item La transmitancia térmica de cierto elemento no afecta en la transmitancia del resto de elementos. La transmitancia se aporta individualmente por elemento.
+    \item Las áreas de los elementos son conocidas y constantes. El modelo en sí no modifica la escala de la vivienda.
+    \item Cada elemento optimizable utiliza exactamente una alternativa, de modo que no se combinan soluciones parciales.
+    \item La transmitancia térmica de cierto elemento no afecta en la transmitancia del resto de elementos independiente de su distancia, área y superficie de contacto. La transmitancia se aporta individualmente por elemento.
+    \item Los costos y transmitancias son conocidas. Para el caso de las transmitancias, también se asume que los valores representan adecuadamente el desempeño térmico de los elementos.
+    \item Todas las alternativas del catálogo son factibles para el elemento que tienen asociado. Es decir, por ejemplo, el catálogo no presenta un material imposible de utilizar para un muro.
+    \item Se denomina \textit{costo total de inversión en materiales} a únicamente su compra. El modelo no trabaja costos por mano de obra, transporte, mantención, entre otros.
+    \item La decisión de utilizar o no cada alternativa es suficiente para resolver el problema. No se considera la cantidad de material, espesor de aislante u otros factores relacionados.
 \end{enumerate}
