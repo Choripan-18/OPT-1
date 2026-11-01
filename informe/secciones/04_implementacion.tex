@@ -1,4 +1,4 @@
-\section{Modelamiento del problema}
+\section{Implementación}
 \subsection{Explicación del solver}
 lp\_solver es un solver y biblioteca que resuelve problemas de programación lineal y programación entera mixta utilizando los métodos simplex y branch and bound.
 \newline Tras recibir un modelo, incluyendo variables de decisión, función objetivo y restricciones, de parte del usuario, que puede ser desde archivos de texto, archivos MPS o directamente mediante llamadas a su propia API, el modelo puede, en primer lugar, aplicar un preprocesamiento llamado \"Presolve\" que simplifica el modelo, eliminando variables y restricciones que no aportan al problema y sustituyendo variables con valores fijos por constantes, reduciendo la complejidad a nivel computacional del problema.
