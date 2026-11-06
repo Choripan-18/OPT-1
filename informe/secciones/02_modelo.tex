@@ -14,7 +14,6 @@
         \item $A_{i} > 0:$ Área de cada elemento i [$m^{2}$].
         \item $C_{ij} \geq 0:$ Costo de cada alternativa j en el elemento i [$\$/m^{2}$]. 
         \item $U_{ij} > 0:$ Transmitancia térmica de la alternativa j para el elemento i [$W/(m^{2}K)$].
-        \item $C_{i}^{F} \geq 0:$ Costo de los elementos i fijos [$\$/m^{2}$]. 
         \item $U_{i}^{F} > 0:$ Transmitancia térmica de los elementos i fijos [$W/(m^{2}K)$].
         \item $U^{max} > 0:$ Límite máximo de transmitancia [$W/(m^{2}K)$].
     \end{itemize}
@@ -25,7 +24,7 @@
     \end{itemize}
     \item Función objetivo
     \begin{itemize}
-        \item $min Z = \sum_{i \in I^{O}} \sum_{j \in J_{i}} A_{i}C_{ij}x_{ij} + A_{i}C_{i}^{F}$
+        \item $min Z = \sum_{i \in I^{O}} \sum_{j \in J_{i}} A_{i}C_{ij}x_{ij}
         \newline
         \newline
         Sumatoria $j \in J_{i}$: Recorre todas las alternativas posibles para un elemento.
