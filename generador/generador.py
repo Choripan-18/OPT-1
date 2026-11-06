@@ -114,8 +114,10 @@ def generarUMax(elementos, catalogo):
             suma_u_min += u_mejor * el["area"]
             suma_u_max += u_peor * el["area"]
         else:
-            u_fijo = random.choice(valores_u_cat)
-            el["U_fijo"] = u_fijo 
+            alt_fija = random.choice(catalogo[cat])   
+            u_fijo = alt_fija["U"]
+            el["U_fijo"] = u_fijo
+            el["C_fijo"] = alt_fija["costo"]        
             suma_u_min += u_fijo * el["area"]
             suma_u_max += u_fijo * el["area"]
             
@@ -164,7 +166,6 @@ def generarInstancias():
 
 if __name__ == "__main__":
     instancias_finales = generarInstancias()
-
     # 2. Cambia la apertura del archivo a .json y usa json.dump para guardarlo
     with open("instancias.json", "w", encoding="utf-8") as archivo:
         json.dump(instancias_finales, archivo, ensure_ascii=False, indent=4)

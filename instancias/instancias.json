@@ -167,7 +167,8 @@
                 "categoria": "Piso",
                 "area": 46.32,
                 "estado": "fijo",
-                "U_fijo": 2.47
+                "U_fijo": 2.47,
+                "C_fijo": 53613.0
             },
             {
                 "id": "Muro_2",
@@ -180,7 +181,8 @@
                 "categoria": "Ventana",
                 "area": 1.87,
                 "estado": "fijo",
-                "U_fijo": 3.48
+                "U_fijo": 3.48,
+                "C_fijo": 36051.0
             },
             {
                 "id": "Ventana_4",
@@ -199,14 +201,16 @@
                 "categoria": "Ventana",
                 "area": 3.43,
                 "estado": "fijo",
-                "U_fijo": 4.83
+                "U_fijo": 4.83,
+                "C_fijo": 30615.0
             },
             {
                 "id": "Piso_7",
                 "categoria": "Piso",
                 "area": 118.87,
                 "estado": "fijo",
-                "U_fijo": 4.54
+                "U_fijo": 4.54,
+                "C_fijo": 14736.0
             },
             {
                 "id": "Muro_8",
@@ -219,49 +223,56 @@
                 "categoria": "Ventana",
                 "area": 3.29,
                 "estado": "fijo",
-                "U_fijo": 4.95
+                "U_fijo": 4.95,
+                "C_fijo": 23031.0
             },
             {
                 "id": "Ventana_10",
                 "categoria": "Ventana",
                 "area": 2.73,
                 "estado": "fijo",
-                "U_fijo": 4.47
+                "U_fijo": 4.47,
+                "C_fijo": 34964.0
             },
             {
                 "id": "Piso_11",
                 "categoria": "Piso",
                 "area": 100.41,
                 "estado": "fijo",
-                "U_fijo": 4.0
+                "U_fijo": 4.0,
+                "C_fijo": 20368.0
             },
             {
                 "id": "Muro_12",
                 "categoria": "Muro",
                 "area": 22.16,
                 "estado": "fijo",
-                "U_fijo": 4.65
+                "U_fijo": 4.65,
+                "C_fijo": 5530.0
             },
             {
                 "id": "Ventana_13",
                 "categoria": "Ventana",
                 "area": 1.57,
                 "estado": "fijo",
-                "U_fijo": 4.47
+                "U_fijo": 4.47,
+                "C_fijo": 34964.0
             },
             {
                 "id": "Piso_14",
                 "categoria": "Piso",
                 "area": 100.88,
                 "estado": "fijo",
-                "U_fijo": 4.87
+                "U_fijo": 4.87,
+                "C_fijo": 7829.0
             },
             {
                 "id": "Piso_15",
                 "categoria": "Piso",
                 "area": 91.51,
                 "estado": "fijo",
-                "U_fijo": 3.34
+                "U_fijo": 3.34,
+                "C_fijo": 39376.0
             }
         ]
     },
@@ -373,28 +384,32 @@
                 "categoria": "Techo",
                 "area": 39.13,
                 "estado": "fijo",
-                "U_fijo": 1.15
+                "U_fijo": 1.15,
+                "C_fijo": 60479.0
             },
             {
                 "id": "Piso_2",
                 "categoria": "Piso",
                 "area": 66.05,
                 "estado": "fijo",
-                "U_fijo": 0.68
+                "U_fijo": 0.68,
+                "C_fijo": 37584.0
             },
             {
                 "id": "Ventana_3",
                 "categoria": "Ventana",
                 "area": 1.38,
                 "estado": "fijo",
-                "U_fijo": 4.7
+                "U_fijo": 4.7,
+                "C_fijo": 22317.0
             },
             {
                 "id": "Techo_4",
                 "categoria": "Techo",
                 "area": 74.64,
                 "estado": "fijo",
-                "U_fijo": 3.97
+                "U_fijo": 3.97,
+                "C_fijo": 19835.0
             },
             {
                 "id": "Piso_5",
@@ -407,14 +422,16 @@
                 "categoria": "Piso",
                 "area": 111.06,
                 "estado": "fijo",
-                "U_fijo": 3.71
+                "U_fijo": 3.71,
+                "C_fijo": 7926.0
             },
             {
                 "id": "Piso_7",
                 "categoria": "Piso",
                 "area": 29.22,
                 "estado": "fijo",
-                "U_fijo": 2.29
+                "U_fijo": 2.29,
+                "C_fijo": 23375.0
             },
             {
                 "id": "Ventana_8",
@@ -427,35 +444,40 @@
                 "categoria": "Piso",
                 "area": 52.03,
                 "estado": "fijo",
-                "U_fijo": 3.71
+                "U_fijo": 3.71,
+                "C_fijo": 7926.0
             },
             {
                 "id": "Techo_10",
                 "categoria": "Techo",
                 "area": 54.91,
                 "estado": "fijo",
-                "U_fijo": 3.97
+                "U_fijo": 3.97,
+                "C_fijo": 19835.0
             },
             {
                 "id": "Piso_11",
                 "categoria": "Piso",
                 "area": 92.6,
                 "estado": "fijo",
-                "U_fijo": 3.71
+                "U_fijo": 3.71,
+                "C_fijo": 7926.0
             },
             {
                 "id": "Piso_12",
                 "categoria": "Piso",
                 "area": 119.33,
                 "estado": "fijo",
-                "U_fijo": 2.89
+                "U_fijo": 2.89,
+                "C_fijo": 18670.0
             },
             {
                 "id": "Ventana_13",
                 "categoria": "Ventana",
                 "area": 1.31,
                 "estado": "fijo",
-                "U_fijo": 1.81
+                "U_fijo": 1.81,
+                "C_fijo": 43070.0
             },
             {
                 "id": "Ventana_14",
@@ -624,42 +646,48 @@
                 "categoria": "Techo",
                 "area": 34.81,
                 "estado": "fijo",
-                "U_fijo": 1.83
+                "U_fijo": 1.83,
+                "C_fijo": 49940.0
             },
             {
                 "id": "Techo_2",
                 "categoria": "Techo",
                 "area": 109.84,
                 "estado": "fijo",
-                "U_fijo": 1.86
+                "U_fijo": 1.86,
+                "C_fijo": 43146.0
             },
             {
                 "id": "Piso_3",
                 "categoria": "Piso",
                 "area": 63.58,
                 "estado": "fijo",
-                "U_fijo": 1.67
+                "U_fijo": 1.67,
+                "C_fijo": 36221.0
             },
             {
                 "id": "Techo_4",
                 "categoria": "Techo",
                 "area": 29.09,
                 "estado": "fijo",
-                "U_fijo": 1.51
+                "U_fijo": 1.51,
+                "C_fijo": 54437.0
             },
             {
                 "id": "Piso_5",
                 "categoria": "Piso",
                 "area": 81.58,
                 "estado": "fijo",
-                "U_fijo": 4.12
+                "U_fijo": 4.12,
+                "C_fijo": 5119.0
             },
             {
                 "id": "Piso_6",
                 "categoria": "Piso",
                 "area": 99.07,
                 "estado": "fijo",
-                "U_fijo": 1.21
+                "U_fijo": 1.21,
+                "C_fijo": 45274.0
             },
             {
                 "id": "Puerta_7",
@@ -672,7 +700,8 @@
                 "categoria": "Techo",
                 "area": 68.26,
                 "estado": "fijo",
-                "U_fijo": 1.83
+                "U_fijo": 1.83,
+                "C_fijo": 49940.0
             },
             {
                 "id": "Puerta_9",
@@ -691,7 +720,8 @@
                 "categoria": "Puerta",
                 "area": 1.71,
                 "estado": "fijo",
-                "U_fijo": 3.29
+                "U_fijo": 3.29,
+                "C_fijo": 46449.0
             },
             {
                 "id": "Techo_12",
@@ -704,21 +734,24 @@
                 "categoria": "Puerta",
                 "area": 1.61,
                 "estado": "fijo",
-                "U_fijo": 4.49
+                "U_fijo": 4.49,
+                "C_fijo": 30719.0
             },
             {
                 "id": "Piso_14",
                 "categoria": "Piso",
                 "area": 101.8,
                 "estado": "fijo",
-                "U_fijo": 4.12
+                "U_fijo": 4.12,
+                "C_fijo": 5119.0
             },
             {
                 "id": "Piso_15",
                 "categoria": "Piso",
                 "area": 75.3,
                 "estado": "fijo",
-                "U_fijo": 1.67
+                "U_fijo": 1.67,
+                "C_fijo": 36221.0
             }
         ]
     },
@@ -897,49 +930,56 @@
                 "categoria": "Piso",
                 "area": 27.9,
                 "estado": "fijo",
-                "U_fijo": 3.91
+                "U_fijo": 3.91,
+                "C_fijo": 18323.0
             },
             {
                 "id": "Puerta_2",
                 "categoria": "Puerta",
                 "area": 2.15,
                 "estado": "fijo",
-                "U_fijo": 0.8
+                "U_fijo": 0.8,
+                "C_fijo": 56577.0
             },
             {
                 "id": "Techo_3",
                 "categoria": "Techo",
                 "area": 87.38,
                 "estado": "fijo",
-                "U_fijo": 4.61
+                "U_fijo": 4.61,
+                "C_fijo": 18741.0
             },
             {
                 "id": "Techo_4",
                 "categoria": "Techo",
                 "area": 93.87,
                 "estado": "fijo",
-                "U_fijo": 1.61
+                "U_fijo": 1.61,
+                "C_fijo": 32774.0
             },
             {
                 "id": "Puerta_5",
                 "categoria": "Puerta",
                 "area": 2.38,
                 "estado": "fijo",
-                "U_fijo": 1.54
+                "U_fijo": 1.54,
+                "C_fijo": 51313.0
             },
             {
                 "id": "Puerta_6",
                 "categoria": "Puerta",
                 "area": 1.66,
                 "estado": "fijo",
-                "U_fijo": 1.39
+                "U_fijo": 1.39,
+                "C_fijo": 53216.0
             },
             {
                 "id": "Ventana_7",
                 "categoria": "Ventana",
                 "area": 1.16,
                 "estado": "fijo",
-                "U_fijo": 1.01
+                "U_fijo": 1.01,
+                "C_fijo": 48673.0
             },
             {
                 "id": "Puerta_8",
@@ -958,35 +998,40 @@
                 "categoria": "Piso",
                 "area": 72.29,
                 "estado": "fijo",
-                "U_fijo": 1.34
+                "U_fijo": 1.34,
+                "C_fijo": 54282.0
             },
             {
                 "id": "Ventana_11",
                 "categoria": "Ventana",
                 "area": 1.41,
                 "estado": "fijo",
-                "U_fijo": 4.03
+                "U_fijo": 4.03,
+                "C_fijo": 34161.0
             },
             {
                 "id": "Piso_12",
                 "categoria": "Piso",
                 "area": 46.86,
                 "estado": "fijo",
-                "U_fijo": 1.34
+                "U_fijo": 1.34,
+                "C_fijo": 54282.0
             },
             {
                 "id": "Techo_13",
                 "categoria": "Techo",
                 "area": 91.84,
                 "estado": "fijo",
-                "U_fijo": 4.61
+                "U_fijo": 4.61,
+                "C_fijo": 18741.0
             },
             {
                 "id": "Techo_14",
                 "categoria": "Techo",
                 "area": 48.79,
                 "estado": "fijo",
-                "U_fijo": 1.28
+                "U_fijo": 1.28,
+                "C_fijo": 42268.0
             },
             {
                 "id": "Ventana_15",
@@ -1139,49 +1184,56 @@
                 "categoria": "Ventana",
                 "area": 2.59,
                 "estado": "fijo",
-                "U_fijo": 2.68
+                "U_fijo": 2.68,
+                "C_fijo": 40266.0
             },
             {
                 "id": "Ventana_2",
                 "categoria": "Ventana",
                 "area": 3.47,
                 "estado": "fijo",
-                "U_fijo": 4.09
+                "U_fijo": 4.09,
+                "C_fijo": 12089.0
             },
             {
                 "id": "Muro_3",
                 "categoria": "Muro",
                 "area": 8.85,
                 "estado": "fijo",
-                "U_fijo": 3.94
+                "U_fijo": 3.94,
+                "C_fijo": 18909.0
             },
             {
                 "id": "Piso_4",
                 "categoria": "Piso",
                 "area": 113.06,
                 "estado": "fijo",
-                "U_fijo": 0.87
+                "U_fijo": 0.87,
+                "C_fijo": 39430.0
             },
             {
                 "id": "Muro_5",
                 "categoria": "Muro",
                 "area": 10.32,
                 "estado": "fijo",
-                "U_fijo": 3.7
+                "U_fijo": 3.7,
+                "C_fijo": 20149.0
             },
             {
                 "id": "Piso_6",
                 "categoria": "Piso",
                 "area": 38.52,
                 "estado": "fijo",
-                "U_fijo": 1.79
+                "U_fijo": 1.79,
+                "C_fijo": 30995.0
             },
             {
                 "id": "Piso_7",
                 "categoria": "Piso",
                 "area": 92.75,
                 "estado": "fijo",
-                "U_fijo": 0.31
+                "U_fijo": 0.31,
+                "C_fijo": 62678.0
             },
             {
                 "id": "Muro_8",
@@ -1194,21 +1246,24 @@
                 "categoria": "Muro",
                 "area": 13.5,
                 "estado": "fijo",
-                "U_fijo": 1.66
+                "U_fijo": 1.66,
+                "C_fijo": 40003.0
             },
             {
                 "id": "Piso_10",
                 "categoria": "Piso",
                 "area": 68.56,
                 "estado": "fijo",
-                "U_fijo": 4.03
+                "U_fijo": 4.03,
+                "C_fijo": 28906.0
             },
             {
                 "id": "Muro_11",
                 "categoria": "Muro",
                 "area": 15.45,
                 "estado": "fijo",
-                "U_fijo": 1.66
+                "U_fijo": 1.66,
+                "C_fijo": 40003.0
             },
             {
                 "id": "Ventana_12",
@@ -1221,21 +1276,24 @@
                 "categoria": "Ventana",
                 "area": 1.67,
                 "estado": "fijo",
-                "U_fijo": 4.09
+                "U_fijo": 4.09,
+                "C_fijo": 12089.0
             },
             {
                 "id": "Ventana_14",
                 "categoria": "Ventana",
                 "area": 1.59,
                 "estado": "fijo",
-                "U_fijo": 4.9
+                "U_fijo": 4.9,
+                "C_fijo": 6979.0
             },
             {
                 "id": "Ventana_15",
                 "categoria": "Ventana",
                 "area": 1.7,
                 "estado": "fijo",
-                "U_fijo": 4.09
+                "U_fijo": 4.09,
+                "C_fijo": 12089.0
             }
         ]
     },
@@ -1683,14 +1741,16 @@
                 "categoria": "Piso",
                 "area": 92.27,
                 "estado": "fijo",
-                "U_fijo": 0.7
+                "U_fijo": 0.7,
+                "C_fijo": 42281.0
             },
             {
                 "id": "Piso_4",
                 "categoria": "Piso",
                 "area": 112.97,
                 "estado": "fijo",
-                "U_fijo": 0.7
+                "U_fijo": 0.7,
+                "C_fijo": 42281.0
             },
             {
                 "id": "Piso_5",
@@ -1703,7 +1763,8 @@
                 "categoria": "Piso",
                 "area": 36.93,
                 "estado": "fijo",
-                "U_fijo": 4.25
+                "U_fijo": 4.25,
+                "C_fijo": 5925.0
             },
             {
                 "id": "Techo_7",
@@ -1716,7 +1777,8 @@
                 "categoria": "Puerta",
                 "area": 2.32,
                 "estado": "fijo",
-                "U_fijo": 1.85
+                "U_fijo": 1.85,
+                "C_fijo": 40044.0
             },
             {
                 "id": "Techo_9",
@@ -1741,28 +1803,32 @@
                 "categoria": "Techo",
                 "area": 40.82,
                 "estado": "fijo",
-                "U_fijo": 4.82
+                "U_fijo": 4.82,
+                "C_fijo": 17440.0
             },
             {
                 "id": "Piso_13",
                 "categoria": "Piso",
                 "area": 30.3,
                 "estado": "fijo",
-                "U_fijo": 0.79
+                "U_fijo": 0.79,
+                "C_fijo": 39007.0
             },
             {
                 "id": "Puerta_14",
                 "categoria": "Puerta",
                 "area": 2.37,
                 "estado": "fijo",
-                "U_fijo": 4.35
+                "U_fijo": 4.35,
+                "C_fijo": 10033.0
             },
             {
                 "id": "Piso_15",
                 "categoria": "Piso",
                 "area": 66.46,
                 "estado": "fijo",
-                "U_fijo": 1.29
+                "U_fijo": 1.29,
+                "C_fijo": 36090.0
             }
         ]
     },
@@ -2253,14 +2319,16 @@
                 "categoria": "Muro",
                 "area": 22.79,
                 "estado": "fijo",
-                "U_fijo": 0.44
+                "U_fijo": 0.44,
+                "C_fijo": 64379.0
             },
             {
                 "id": "Muro_2",
                 "categoria": "Muro",
                 "area": 23.2,
                 "estado": "fijo",
-                "U_fijo": 2.52
+                "U_fijo": 2.52,
+                "C_fijo": 42495.0
             },
             {
                 "id": "Puerta_3",
@@ -2279,7 +2347,8 @@
                 "categoria": "Muro",
                 "area": 23.21,
                 "estado": "fijo",
-                "U_fijo": 3.86
+                "U_fijo": 3.86,
+                "C_fijo": 37693.0
             },
             {
                 "id": "Ventana_6",
@@ -2292,28 +2361,32 @@
                 "categoria": "Ventana",
                 "area": 1.4,
                 "estado": "fijo",
-                "U_fijo": 0.27
+                "U_fijo": 0.27,
+                "C_fijo": 62175.0
             },
             {
                 "id": "Ventana_8",
                 "categoria": "Ventana",
                 "area": 1.0,
                 "estado": "fijo",
-                "U_fijo": 2.03
+                "U_fijo": 2.03,
+                "C_fijo": 53991.0
             },
             {
                 "id": "Ventana_9",
                 "categoria": "Ventana",
                 "area": 2.2,
                 "estado": "fijo",
-                "U_fijo": 3.52
+                "U_fijo": 3.52,
+                "C_fijo": 16521.0
             },
             {
                 "id": "Techo_10",
                 "categoria": "Techo",
                 "area": 113.34,
                 "estado": "fijo",
-                "U_fijo": 2.56
+                "U_fijo": 2.56,
+                "C_fijo": 50762.0
             },
             {
                 "id": "Muro_11",
@@ -2326,21 +2399,24 @@
                 "categoria": "Piso",
                 "area": 29.82,
                 "estado": "fijo",
-                "U_fijo": 3.26
+                "U_fijo": 3.26,
+                "C_fijo": 9252.0
             },
             {
                 "id": "Ventana_13",
                 "categoria": "Ventana",
                 "area": 1.41,
                 "estado": "fijo",
-                "U_fijo": 2.11
+                "U_fijo": 2.11,
+                "C_fijo": 52249.0
             },
             {
                 "id": "Ventana_14",
                 "categoria": "Ventana",
                 "area": 3.22,
                 "estado": "fijo",
-                "U_fijo": 2.11
+                "U_fijo": 2.11,
+                "C_fijo": 52249.0
             },
             {
                 "id": "Muro_15",
@@ -2792,35 +2868,40 @@
                 "categoria": "Muro",
                 "area": 13.52,
                 "estado": "fijo",
-                "U_fijo": 1.89
+                "U_fijo": 1.89,
+                "C_fijo": 46180.0
             },
             {
                 "id": "Ventana_2",
                 "categoria": "Ventana",
                 "area": 1.99,
                 "estado": "fijo",
-                "U_fijo": 0.76
+                "U_fijo": 0.76,
+                "C_fijo": 59633.0
             },
             {
                 "id": "Ventana_3",
                 "categoria": "Ventana",
                 "area": 2.6,
                 "estado": "fijo",
-                "U_fijo": 3.82
+                "U_fijo": 3.82,
+                "C_fijo": 26375.0
             },
             {
                 "id": "Puerta_4",
                 "categoria": "Puerta",
                 "area": 2.17,
                 "estado": "fijo",
-                "U_fijo": 2.89
+                "U_fijo": 2.89,
+                "C_fijo": 19473.0
             },
             {
                 "id": "Piso_5",
                 "categoria": "Piso",
                 "area": 92.7,
                 "estado": "fijo",
-                "U_fijo": 4.3
+                "U_fijo": 4.3,
+                "C_fijo": 16437.0
             },
             {
                 "id": "Techo_6",
@@ -2833,7 +2914,8 @@
                 "categoria": "Techo",
                 "area": 108.33,
                 "estado": "fijo",
-                "U_fijo": 2.58
+                "U_fijo": 2.58,
+                "C_fijo": 42589.0
             },
             {
                 "id": "Ventana_8",
@@ -2846,7 +2928,8 @@
                 "categoria": "Puerta",
                 "area": 1.79,
                 "estado": "fijo",
-                "U_fijo": 4.19
+                "U_fijo": 4.19,
+                "C_fijo": 9265.0
             },
             {
                 "id": "Puerta_10",
@@ -2859,7 +2942,8 @@
                 "categoria": "Ventana",
                 "area": 1.6,
                 "estado": "fijo",
-                "U_fijo": 4.26
+                "U_fijo": 4.26,
+                "C_fijo": 19752.0
             },
             {
                 "id": "Techo_12",
@@ -2872,7 +2956,8 @@
                 "categoria": "Puerta",
                 "area": 1.89,
                 "estado": "fijo",
-                "U_fijo": 3.39
+                "U_fijo": 3.39,
+                "C_fijo": 9514.0
             },
             {
                 "id": "Piso_14",
@@ -2885,7 +2970,8 @@
                 "categoria": "Piso",
                 "area": 66.48,
                 "estado": "fijo",
-                "U_fijo": 4.3
+                "U_fijo": 4.3,
+                "C_fijo": 16437.0
             }
         ]
     },
@@ -3391,28 +3477,32 @@
                 "categoria": "Puerta",
                 "area": 2.11,
                 "estado": "fijo",
-                "U_fijo": 4.97
+                "U_fijo": 4.97,
+                "C_fijo": 7620.0
             },
             {
                 "id": "Puerta_2",
                 "categoria": "Puerta",
                 "area": 2.13,
                 "estado": "fijo",
-                "U_fijo": 4.8
+                "U_fijo": 4.8,
+                "C_fijo": 9834.0
             },
             {
                 "id": "Techo_3",
                 "categoria": "Techo",
                 "area": 90.29,
                 "estado": "fijo",
-                "U_fijo": 1.68
+                "U_fijo": 1.68,
+                "C_fijo": 49706.0
             },
             {
                 "id": "Piso_4",
                 "categoria": "Piso",
                 "area": 98.13,
                 "estado": "fijo",
-                "U_fijo": 4.31
+                "U_fijo": 4.31,
+                "C_fijo": 14540.0
             },
             {
                 "id": "Techo_5",
@@ -3425,7 +3515,8 @@
                 "categoria": "Piso",
                 "area": 99.8,
                 "estado": "fijo",
-                "U_fijo": 3.97
+                "U_fijo": 3.97,
+                "C_fijo": 17032.0
             },
             {
                 "id": "Ventana_7",
@@ -3450,7 +3541,8 @@
                 "categoria": "Ventana",
                 "area": 1.82,
                 "estado": "fijo",
-                "U_fijo": 3.24
+                "U_fijo": 3.24,
+                "C_fijo": 34430.0
             },
             {
                 "id": "Techo_11",
@@ -3463,7 +3555,8 @@
                 "categoria": "Techo",
                 "area": 56.89,
                 "estado": "fijo",
-                "U_fijo": 2.04
+                "U_fijo": 2.04,
+                "C_fijo": 40280.0
             },
             {
                 "id": "Muro_13",
@@ -3476,7 +3569,8 @@
                 "categoria": "Puerta",
                 "area": 2.08,
                 "estado": "fijo",
-                "U_fijo": 3.5
+                "U_fijo": 3.5,
+                "C_fijo": 27368.0
             },
             {
                 "id": "Muro_15",
@@ -4003,7 +4097,8 @@
                 "categoria": "Ventana",
                 "area": 2.57,
                 "estado": "fijo",
-                "U_fijo": 3.91
+                "U_fijo": 3.91,
+                "C_fijo": 13534.0
             },
             {
                 "id": "Ventana_2",
@@ -4022,7 +4117,8 @@
                 "categoria": "Muro",
                 "area": 12.41,
                 "estado": "fijo",
-                "U_fijo": 2.12
+                "U_fijo": 2.12,
+                "C_fijo": 42048.0
             },
             {
                 "id": "Piso_5",
@@ -4041,14 +4137,16 @@
                 "categoria": "Piso",
                 "area": 73.9,
                 "estado": "fijo",
-                "U_fijo": 1.29
+                "U_fijo": 1.29,
+                "C_fijo": 52128.0
             },
             {
                 "id": "Piso_8",
                 "categoria": "Piso",
                 "area": 72.85,
                 "estado": "fijo",
-                "U_fijo": 2.5
+                "U_fijo": 2.5,
+                "C_fijo": 46352.0
             },
             {
                 "id": "Ventana_9",
@@ -4061,28 +4159,32 @@
                 "categoria": "Piso",
                 "area": 90.64,
                 "estado": "fijo",
-                "U_fijo": 1.29
+                "U_fijo": 1.29,
+                "C_fijo": 52128.0
             },
             {
                 "id": "Piso_11",
                 "categoria": "Piso",
                 "area": 49.04,
                 "estado": "fijo",
-                "U_fijo": 4.65
+                "U_fijo": 4.65,
+                "C_fijo": 17706.0
             },
             {
                 "id": "Ventana_12",
                 "categoria": "Ventana",
                 "area": 2.46,
                 "estado": "fijo",
-                "U_fijo": 0.4
+                "U_fijo": 0.4,
+                "C_fijo": 64249.0
             },
             {
                 "id": "Ventana_13",
                 "categoria": "Ventana",
                 "area": 3.39,
                 "estado": "fijo",
-                "U_fijo": 2.8
+                "U_fijo": 2.8,
+                "C_fijo": 33790.0
             },
             {
                 "id": "Muro_14",
@@ -4095,7 +4197,8 @@
                 "categoria": "Techo",
                 "area": 36.4,
                 "estado": "fijo",
-                "U_fijo": 3.0
+                "U_fijo": 3.0,
+                "C_fijo": 19550.0
             }
         ]
     },
@@ -5043,7 +5146,8 @@
                 "categoria": "Ventana",
                 "area": 2.18,
                 "estado": "fijo",
-                "U_fijo": 3.28
+                "U_fijo": 3.28,
+                "C_fijo": 20759.0
             },
             {
                 "id": "Muro_4",
@@ -5086,28 +5190,32 @@
                 "categoria": "Puerta",
                 "area": 1.95,
                 "estado": "fijo",
-                "U_fijo": 2.94
+                "U_fijo": 2.94,
+                "C_fijo": 40001.0
             },
             {
                 "id": "Puerta_11",
                 "categoria": "Puerta",
                 "area": 1.6,
                 "estado": "fijo",
-                "U_fijo": 1.8
+                "U_fijo": 1.8,
+                "C_fijo": 54617.0
             },
             {
                 "id": "Techo_12",
                 "categoria": "Techo",
                 "area": 89.56,
                 "estado": "fijo",
-                "U_fijo": 0.7
+                "U_fijo": 0.7,
+                "C_fijo": 62167.0
             },
             {
                 "id": "Piso_13",
                 "categoria": "Piso",
                 "area": 83.01,
                 "estado": "fijo",
-                "U_fijo": 3.88
+                "U_fijo": 3.88,
+                "C_fijo": 15124.0
             },
             {
                 "id": "Techo_14",
@@ -6015,21 +6123,24 @@
                 "categoria": "Piso",
                 "area": 111.82,
                 "estado": "fijo",
-                "U_fijo": 3.59
+                "U_fijo": 3.59,
+                "C_fijo": 17992.0
             },
             {
                 "id": "Muro_6",
                 "categoria": "Muro",
                 "area": 14.1,
                 "estado": "fijo",
-                "U_fijo": 4.59
+                "U_fijo": 4.59,
+                "C_fijo": 17610.0
             },
             {
                 "id": "Muro_7",
                 "categoria": "Muro",
                 "area": 11.09,
                 "estado": "fijo",
-                "U_fijo": 4.59
+                "U_fijo": 4.59,
+                "C_fijo": 18496.0
             },
             {
                 "id": "Ventana_8",
@@ -6066,7 +6177,8 @@
                 "categoria": "Piso",
                 "area": 26.45,
                 "estado": "fijo",
-                "U_fijo": 3.47
+                "U_fijo": 3.47,
+                "C_fijo": 18408.0
             },
             {
                 "id": "Puerta_14",
@@ -6103,7 +6215,8 @@
                 "categoria": "Muro",
                 "area": 18.69,
                 "estado": "fijo",
-                "U_fijo": 4.95
+                "U_fijo": 4.95,
+                "C_fijo": 7363.0
             }
         ]
     },
@@ -7021,7 +7134,8 @@
                 "categoria": "Piso",
                 "area": 36.26,
                 "estado": "fijo",
-                "U_fijo": 4.05
+                "U_fijo": 4.05,
+                "C_fijo": 12881.0
             },
             {
                 "id": "Puerta_4",
@@ -7034,7 +7148,8 @@
                 "categoria": "Techo",
                 "area": 44.25,
                 "estado": "fijo",
-                "U_fijo": 4.93
+                "U_fijo": 4.93,
+                "C_fijo": 6344.0
             },
             {
                 "id": "Ventana_6",
@@ -7053,7 +7168,8 @@
                 "categoria": "Techo",
                 "area": 27.25,
                 "estado": "fijo",
-                "U_fijo": 3.62
+                "U_fijo": 3.62,
+                "C_fijo": 22506.0
             },
             {
                 "id": "Ventana_9",
@@ -7078,14 +7194,16 @@
                 "categoria": "Piso",
                 "area": 107.35,
                 "estado": "fijo",
-                "U_fijo": 3.3
+                "U_fijo": 3.3,
+                "C_fijo": 14851.0
             },
             {
                 "id": "Techo_13",
                 "categoria": "Techo",
                 "area": 33.68,
                 "estado": "fijo",
-                "U_fijo": 1.26
+                "U_fijo": 1.26,
+                "C_fijo": 45003.0
             },
             {
                 "id": "Techo_14",
@@ -8085,7 +8203,8 @@
                 "categoria": "Muro",
                 "area": 22.7,
                 "estado": "fijo",
-                "U_fijo": 3.14
+                "U_fijo": 3.14,
+                "C_fijo": 34918.0
             },
             {
                 "id": "Piso_6",
@@ -8098,14 +8217,16 @@
                 "categoria": "Muro",
                 "area": 9.24,
                 "estado": "fijo",
-                "U_fijo": 3.49
+                "U_fijo": 3.49,
+                "C_fijo": 29778.0
             },
             {
                 "id": "Techo_8",
                 "categoria": "Techo",
                 "area": 98.72,
                 "estado": "fijo",
-                "U_fijo": 1.52
+                "U_fijo": 1.52,
+                "C_fijo": 53044.0
             },
             {
                 "id": "Techo_9",
@@ -8118,7 +8239,8 @@
                 "categoria": "Muro",
                 "area": 14.34,
                 "estado": "fijo",
-                "U_fijo": 2.81
+                "U_fijo": 2.81,
+                "C_fijo": 36290.0
             },
             {
                 "id": "Techo_11",
@@ -8161,7 +8283,8 @@
                 "categoria": "Puerta",
                 "area": 2.45,
                 "estado": "fijo",
-                "U_fijo": 4.31
+                "U_fijo": 4.31,
+                "C_fijo": 19139.0
             },
             {
                 "id": "Techo_18",
@@ -9153,7 +9276,8 @@
                 "categoria": "Ventana",
                 "area": 1.72,
                 "estado": "fijo",
-                "U_fijo": 2.28
+                "U_fijo": 2.28,
+                "C_fijo": 39613.0
             },
             {
                 "id": "Ventana_2",
@@ -9166,7 +9290,8 @@
                 "categoria": "Techo",
                 "area": 118.74,
                 "estado": "fijo",
-                "U_fijo": 3.5
+                "U_fijo": 3.5,
+                "C_fijo": 20815.0
             },
             {
                 "id": "Puerta_4",
@@ -9179,7 +9304,8 @@
                 "categoria": "Muro",
                 "area": 12.98,
                 "estado": "fijo",
-                "U_fijo": 2.86
+                "U_fijo": 2.86,
+                "C_fijo": 41472.0
             },
             {
                 "id": "Piso_6",
@@ -9204,7 +9330,8 @@
                 "categoria": "Puerta",
                 "area": 1.8,
                 "estado": "fijo",
-                "U_fijo": 2.67
+                "U_fijo": 2.67,
+                "C_fijo": 32725.0
             },
             {
                 "id": "Ventana_10",
@@ -9247,7 +9374,8 @@
                 "categoria": "Techo",
                 "area": 54.54,
                 "estado": "fijo",
-                "U_fijo": 2.93
+                "U_fijo": 2.93,
+                "C_fijo": 33103.0
             },
             {
                 "id": "Ventana_17",
