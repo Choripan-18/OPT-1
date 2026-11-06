@@ -1,0 +1,29 @@
+Instancia: Mediana_7
+Estado: Óptimo
+
+Elementos fijos:
+- Muro_1: U=0.44, costo=1467197.41
+- Muro_2: U=2.52, costo=985884.0
+- Muro_5: U=3.86, costo=874854.53
+- Ventana_7: U=0.27, costo=87045.0
+- Ventana_8: U=2.03, costo=53991.0
+- Ventana_9: U=3.52, costo=36346.200000000004
+- Techo_10: U=2.56, costo=5753365.08
+- Piso_12: U=3.26, costo=275894.64
+- Ventana_13: U=2.11, costo=73671.09
+- Ventana_14: U=2.11, costo=168241.78
+
+Elementos seleccionados:
+- Puerta_3: alternativa 7, U=2.77, costo=67388.1
+- Ventana_4: alternativa 7, U=2.82, costo=50783.38
+- Ventana_6: alternativa 9, U=2.45, costo=85907.55
+- Muro_11: alternativa 25, U=0.32, costo=1581022.4
+- Muro_15: alternativa 3, U=4.33, costo=78078.0
+
+Costo libres: 1863179.43
+Costo fijos: 9776490.73
+Costo total: 11639670.16
+U equivalente: 2.421999
+U máxima: 2.422000
+Margen térmico: 0.000001
+Tiempo: 0.002728 segundos

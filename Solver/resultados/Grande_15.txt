@@ -1,0 +1,32 @@
+Instancia: Grande_15
+Estado: Óptimo
+
+Elementos fijos:
+- Ventana_1: U=2.28, costo=68134.36
+- Techo_3: U=3.5, costo=2471573.1
+- Muro_5: U=2.86, costo=538306.56
+- Puerta_9: U=2.67, costo=58905.0
+- Techo_16: U=2.93, costo=1805437.6199999999
+
+Elementos seleccionados:
+- Ventana_2: alternativa 9, U=3.66, costo=14648.9
+- Puerta_4: alternativa 15, U=2.98, costo=43472.079999999994
+- Piso_6: alternativa 15, U=2.88, costo=2358629.6100000003
+- Puerta_7: alternativa 15, U=2.98, costo=53947.28
+- Puerta_8: alternativa 15, U=2.98, costo=57351.72
+- Ventana_10: alternativa 11, U=3.47, costo=44108.2
+- Piso_11: alternativa 33, U=0.66, costo=5068053.1
+- Piso_12: alternativa 15, U=2.88, costo=586905.9299999999
+- Techo_13: alternativa 25, U=2.24, costo=4054529.7
+- Piso_14: alternativa 33, U=0.66, costo=4870074.22
+- Piso_15: alternativa 33, U=0.66, costo=1432769.03
+- Ventana_17: alternativa 11, U=3.47, costo=25167.62
+- Ventana_18: alternativa 11, U=3.47, costo=25427.079999999998
+
+Costo libres: 18635084.47
+Costo fijos: 4942356.64
+Costo total: 23577441.11
+U equivalente: 2.160000
+U máxima: 2.160000
+Margen térmico: 0.000000
+Tiempo: 0.066042 segundos

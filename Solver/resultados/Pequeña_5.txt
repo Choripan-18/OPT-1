@@ -1,0 +1,29 @@
+Instancia: Pequeña_5
+Estado: Óptimo
+
+Elementos fijos:
+- Ventana_1: U=2.68, costo=104288.93999999999
+- Ventana_2: U=4.09, costo=41948.83
+- Muro_3: U=3.94, costo=167344.65
+- Piso_4: U=0.87, costo=4457955.8
+- Muro_5: U=3.7, costo=207937.68
+- Piso_6: U=1.79, costo=1193927.4000000001
+- Piso_7: U=0.31, costo=5813384.5
+- Muro_9: U=1.66, costo=540040.5
+- Piso_10: U=4.03, costo=1981795.36
+- Muro_11: U=1.66, costo=618046.35
+- Ventana_13: U=4.09, costo=20188.629999999997
+- Ventana_14: U=4.9, costo=11096.61
+- Ventana_15: U=4.09, costo=20551.3
+
+Elementos seleccionados:
+- Muro_8: alternativa 5, U=2.4, costo=555477.12
+- Ventana_12: alternativa 3, U=4.09, costo=26233.129999999997
+
+Costo libres: 581710.25
+Costo fijos: 15178506.55
+Costo total: 15760216.8
+U equivalente: 1.761017
+U máxima: 1.762000
+Margen térmico: 0.000983
+Tiempo: 0.001084 segundos
