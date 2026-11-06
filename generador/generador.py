@@ -1,4 +1,5 @@
 import random
+import json
 
 tiposInstancias = ["Pequeña", "Mediana", "Grande"]
 categorias = ["Muro", "Techo", "Piso", "Ventana", "Puerta"]
@@ -160,19 +161,12 @@ def generarInstancias():
     return lista_instancias
 
 # === BLOQUE DE EJECUCIÓN ===
+
 if __name__ == "__main__":
     instancias_finales = generarInstancias()
-    
-    with open("instancias.txt", "w", encoding="utf-8") as archivo:
-        for inst in instancias_finales:
-            id_latex = inst['id_instancia'].replace("_", "\\_")
-            tipo = inst['tipo']
-            num_cat = len(inst['catalogo'])
-            num_libres = sum(1 for el in inst['elementos'] if el['estado'] == 'libre')
-            umax = inst['UMax_exigido']
-            factible = "S\\'i" if inst['factible'] else "No"
+
+    # 2. Cambia la apertura del archivo a .json y usa json.dump para guardarlo
+    with open("instancias.json", "w", encoding="utf-8") as archivo:
+        json.dump(instancias_finales, archivo, ensure_ascii=False, indent=4)
             
-            linea = f"{id_latex} & {tipo} & {num_cat} & {num_libres} & {umax} & {factible} \\\\ \\hline\n"
-            archivo.write(linea)
-            
-    print("Archivo 'instancias.txt' generado.")
+    print("Archivo 'instancias.json' generado exitosamente.")
