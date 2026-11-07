@@ -1,45 +1,55 @@
 \section{Modelamiento del problema}
 \begin{enumerate}
-    \item Conjuntos e índices
+
+    \vspace{1em}
+    \item \textbf{Conjuntos e índices}
     \begin{itemize}
-        \item $I:$ Conjunto de todos los elementos constructivos de la vivienda.
-        \item $I^{F}:$ Conjunto de elementos fijos.
-        \item $I^{O}:$ Conjunto de elementos optimizables.
-        \item $J_{i}:$ Conjunto de soluciones constructivas disponibles en el catálogo para el elemento i.
-        \item $i:$ Elemento constructivo.
-        \item $j:$ Alternativa constructiva disponible para el elemento i.
+        \item $I$: Conjunto de todos los elementos constructivos de la vivienda.
+        \item $I^{F}$: Subconjunto de elementos constructivos fijos ($I^{F} \subseteq I$).
+        \item $I^{O}$: Subconjunto de elementos constructivos optimizables ($I^{O} \subseteq I$).
+        \item $J_{i}$: Conjunto de alternativas constructivas (catálogo) disponibles para el elemento $i$.
+        \item $i$: Índice que representa un elemento constructivo específico.
+        \item $j$: Índice que representa una alternativa constructiva específica para un elemento.
     \end{itemize}
-    \item Parámetros
+
+    \vspace{1em}
+    \item \textbf{Parámetros}
     \begin{itemize}
-        \item $A_{i} > 0:$ Área de cada elemento i [$m^{2}$].
-        \item $C_{ij} \geq 0:$ Costo de cada alternativa j en el elemento i [$\$/m^{2}$]. 
-        \item $U_{ij} > 0:$ Transmitancia térmica de la alternativa j para el elemento i [$W/(m^{2}K)$].
-        \item $U_{i}^{F} > 0:$ Transmitancia térmica de los elementos i fijos [$W/(m^{2}K)$].
-        \item $U^{max} > 0:$ Límite máximo de transmitancia [$W/(m^{2}K)$].
+        \item $A_{i} > 0$: Área del elemento constructivo $i$ [$m^{2}$].
+        \item $C_{ij} \geq 0$: Costo unitario de la alternativa $j$ para el elemento $i$ [\$/$m^{2}$]. 
+        \item $U_{ij} > 0$: Transmitancia térmica de la alternativa $j$ para el elemento $i$ [$W/(m^{2}K)$].
+        \item $C_{i}^{F} \geq 0$: Costo unitario del material predefinido para el elemento fijo $i$ [\$/$m^{2}$]. 
+        \item $U_{i}^{F} > 0$: Transmitancia térmica del material predefinido para el elemento fijo $i$ [$W/(m^{2}K)$].
+        \item $U^{\text{max}} > 0$: Límite máximo permitido para la transmitancia térmica global promedio de la vivienda [$W/(m^{2}K)$].
     \end{itemize}
-    \item Variables de decisión
+
+    \vspace{1em}
+    \item \textbf{Variables de decisión}
     \begin{itemize}
-        \item $x_{ij} = 1$ si se selecciona la alternativa j para el elemento i, $0$ en otro caso.
-        \newline $x_{ij} \in \{0, 1\}$
+        \item $x_{ij} = 1$ si se selecciona la alternativa constructiva $j$ para el elemento optimizable $i$, y $0$ en caso contrario.
     \end{itemize}
-    \item Función objetivo
+
+    \vspace{1em}
+    \item \textbf{Función objetivo}
     \begin{itemize}
-        \item $min Z = \sum_{i \in I^{O}} \sum_{j \in J_{i}} A_{i}C_{ij}x_{ij}
+        \item $\min Z = \sum_{i \in I^{O}} \sum_{j \in J_{i}} A_{i}C_{ij}x_{ij} + \sum_{i \in I^{F}} A_{i}C_{i}^{F}$
         \newline
-        \newline
-        Sumatoria $j \in J_{i}$: Recorre todas las alternativas posibles para un elemento.
-        \newline
-        Sumatoria $i \in I^{O}$: Recorre todos los elementos optimizables.
+        \newline La función minimiza el costo total de inversión en materiales de la vivienda. El primer término calcula el costo total de los elementos optimizables, multiplicando el área de cada elemento libre por el precio unitario de la alternativa seleccionada. El segundo término suma el costo constante de todos los elementos fijos (área multiplicada por su costo unitario predefinido), garantizando la consistencia dimensional en la métrica monetaria total.
     \end{itemize}
-    \item Restricciones
+
+    \vspace{1em}
+    \item \textbf{Restricciones}
     \begin{itemize}
-        \item Cada elemento optimizable debe tener exactamente una solución constructiva seleccionada:
-        \newline $\sum_{j \in J_{i}} x_{ij} = 1, \forall i \in I^{O}$
-        \item La transmitancia térmica promedio ponderada no puede superar el umbral de transmitancia máxima:
-        \newline $\sum_{i \in I^{F}} A_{i}U_{i}^{F} + \sum_{i \in I^{O}} \sum_{j \in J_{i}} A_{i}U_{ij}x_{ij} \leq U^{max} \sum_{i \in I} A_{i}$
+        \item $\sum_{j \in J_{i}} x_{ij} = 1, \quad \forall i \in I^{O}$
+        \newline \textbf{Significado operativo:} Garantiza que a cada elemento constructivo optimizable se le asigne exactamente una, y solo una, solución constructiva del catálogo, evitando viviendas incompletas o la superposición de materiales en un mismo sector.
+        
+        \item $\sum_{i \in I^{F}} A_{i}U_{i}^{F} + \sum_{i \in I^{O}} \sum_{j \in J_{i}} A_{i}U_{ij}x_{ij} \leq U^{\text{max}} \sum_{i \in I} A_{i}$
+        \newline \textbf{Significado físico:} Asegura que el balance térmico de la vivienda cumpla con la normativa. Exige que la suma de la transmitancia aportada por los elementos fijos más la transmitancia de las alternativas seleccionadas (ambas ponderadas por el área de sus respectivos elementos) sea menor o igual al umbral máximo permitido distribuido en el área total de la estructura.
     \end{itemize}
-    \item Condiciones de dominio
+
+    \vspace{1em}
+    \item \textbf{Condiciones de dominio}
     \begin{itemize}
-        \item $x_{ij} \in \{0,1\} \forall i \in I^{O}, j \in J_{i}$
+        \item $x_{ij} \in \{0, 1\}, \quad \forall i \in I^{O}, j \in J_{i}$
     \end{itemize}
 \end{enumerate}
