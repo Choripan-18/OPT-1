@@ -1,1 +1,81 @@
 
+\section{Resultados}
+Las 15 instancias son factibles y lp\_solve las resolvió hasta demostrar optimalidad (brecha final igual a 0). Todas pasan las comprobaciones de factibilidad descritas en la sección anterior, y sus valores óptimos coinciden con los de HiGHS (Tabla~\ref{tab:res}). La brecha de la raíz es $(Z^{*} - Z_{LP})/Z^{*}$, con $Z_{LP}$ el valor de la relajación lineal incluyendo el costo constante de los elementos fijos. Los tiempos son de reloj y por eso incluyen unos 2 ms de arranque del proceso (con la restricción térmica inactiva y 0 nodos, lp\_solve tarda entre 2 y 7 ms), de modo que sirven para comparar instancias entre sí, no como medida absoluta.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\input{tablas/tabla_resultados.tex}
+\caption{Resultados de las 15 instancias ($Z^{*}$ en millones de pesos; $U$ obt. es la transmitancia ponderada de la solución; Verif. indica que pasó las comprobaciones propias y coincide con HiGHS).}
+\label{tab:res}
+\end{table}
+
+\subsection{Impacto de los márgenes relativos}
+Para estudiar la exigencia térmica se resolvieron las 15 instancias con $U^{max} = U_{eq}^{min} + h\,(U_{eq}^{peor} - U_{eq}^{min})$ para $h \in \{0.02, 0.05, 0.1, 0.2, 0.35, 0.5, 0.75, 1\}$. El valor $h$ es el margen relativo: $h=0$ exige el mejor aislamiento posible y $h=1$ deja la restricción térmica inactiva. Los datos son los mismos en todos los casos. El generador de la Entrega 1 usa $h \in [0.1, 0.35]$, y el barrido amplía ese rango en ambos sentidos. Las 120 corridas terminaron en óptimo y verificadas (Tabla~\ref{tab:umax}, Figs.~\ref{fig:costo} y \ref{fig:mat}).
+
+\textbf{Costo.} Exigir más aislación encarece la vivienda. Respecto de $h=1$ (donde el modelo elige la alternativa más barata de cada elemento libre), el costo óptimo con $h=0.02$ es 1.21 veces mayor en las instancias pequeñas, 1.81 en las medianas y 4.20 en las grandes. Con $h=0.35$, que es el extremo relajado del generador, el sobrecosto baja a 1.12, 1.48 y 2.86 veces. La diferencia entre tipos viene de cuántos elementos son libres: en las pequeñas solo 2 a 4 de unos 15 elementos pueden cambiar y el resto aporta un costo constante, mientras que en las grandes pueden cambiar 9 a 15. El costo baja de forma monótona al relajar $h$, algo más rápido con márgenes pequeños (Fig.~\ref{fig:costo}a).
+
+\textbf{Material elegido.} Como el catálogo está ordenado, la alternativa $j$ tiene mayor costo y menor transmitancia mientras mayor es $j$. Se mide la aislación elegida como la posición de la alternativa en su catálogo, de 0 (la más barata y con mayor $U$) a 1 (la más cara y aislante), ponderada por área. Con $h=0.02$ el modelo elige alternativas de aislación casi máxima (0.97 en los tres tipos). Con $h=0.1$ baja a 0.81--0.88, con $h=0.35$ a 0.52--0.62 y con $h=0.75$ a 0.21--0.23. La transmitancia media de los elementos libres sube de 0.99 a 4.37 W/m$^{2}$K en las pequeñas, de 0.52 a 4.76 en las medianas y de 0.40 a 4.86 en las grandes al pasar de $h=0.02$ a $h=1$. Es decir, un $U^{max}$ estricto lleva al modelo a materiales caros y muy aislantes en casi todos los elementos, y uno relajado a los más baratos, con $U$ alto.
+
+Por categoría (Fig.~\ref{fig:mat}, instancias medianas y grandes), con $h=0.02$ muro, techo y piso toman niveles de 0.88 a 0.98, mientras que ventana y puerta quedan en 0.67 y 0.68. Al relajar a $h=0.5$ todas bajan a 0.30--0.49. En este catálogo sintético todas las categorías comparten los mismos rangos de $U$ y de costo, así que esa diferencia viene del azar del catálogo y no de propiedades físicas. Con un catálogo real el patrón reflejaría la relación entre costo y aislación de cada categoría.
+
+\textbf{Factibilidad y espacio de búsqueda.} Para $h \geq 0.02$ todas las corridas fueron factibles. Con $U^{max}$ por debajo de lo alcanzable, el modelo no tiene solución: en \texttt{Mediana\_8}, con $h=-0.05$ ($U^{max} = 2.112 < U_{eq}^{min} = 2.204$), lp\_solve declara el problema infactible en 3 ms. Con $h=1$ la restricción térmica no actúa, la relajación lineal ya es entera y no se ramifica (0 nodos). Para $0.02 \leq h \leq 0.75$ el número de nodos no sigue una tendencia clara. En las pequeñas baja de unos 46 con $h=0.02$ a 16 con $h=0.75$. En las medianas se mantiene entre 213 y 292 y en las grandes oscila entre 1\,277 y 2\,704. La exigencia térmica cambia el costo y los materiales, pero en estas instancias afecta menos el esfuerzo de búsqueda que el tamaño del catálogo.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figuras/fig_umax_costo.pdf}
+\caption{Efecto del margen relativo $h$ (promedio de las 5 instancias de cada tipo): (a) costo relativo a $h=1$ y (b) aislación elegida.}
+\label{fig:costo}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.65\linewidth]{figuras/fig_materiales.pdf}
+\caption{Aislación elegida por categoría (promedio de las 10 instancias medianas y grandes).}
+\label{fig:mat}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\input{tablas/tabla_umax.tex}
+\caption{Barrido del margen relativo $h$ (promedio de las 5 instancias de cada tipo). \emph{Aislación elegida}: posición de 0 a 1 en el catálogo; \emph{$U$ medio libres}: en W/m$^{2}$K.}
+\label{tab:umax}
+\end{table}
+
+\subsection{Desempeño computacional}
+\textbf{Por tipo de instancia.} Las instancias pequeñas tienen en promedio 27 variables binarias y 4.4 restricciones y se resuelven en 2.8 ms con 36 nodos (máximo 68). Las medianas tienen 102 variables y 7.4 ms con 315 nodos (máximo 650). Las grandes tienen 478 variables y 0.10 s con 2\,590 nodos (máximo 4\,110; el tiempo máximo es 0.19 s). Entre las medianas y las grandes las variables se multiplican por 4.7, los nodos por 8.2 y el tiempo por 14 (Figs.~\ref{fig:tinst} y \ref{fig:tvars}). Entre las pequeñas y las medianas el tiempo casi no crece porque lo domina el arranque del proceso. La relajación lineal es ajustada: la brecha de la raíz va de 0.009\,\% a 2.8\,\%, con mayores brechas en las pequeñas (hasta 2.8\,\%) que en las grandes (hasta 0.26\,\%), y aun así hay que ramificar para fijar la integralidad.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\input{tablas/tabla_K.tex}
+\caption{Escalamiento con el número de alternativas por categoría $|J|$ y de elementos libres $L$ (5 semillas por caso; 3 en $|J|=800$).}
+\label{tab:K}
+\end{table}
+
+\textbf{Efecto del número de alternativas del catálogo.} Con el generador de la Entrega 1 se fijó el número de alternativas por categoría en $|J| \in \{5, 10, 25, 50, 100, 200, 400\}$ (y 800 con 15 libres) con $L \in \{4, 9, 15\}$ elementos libres, 5 semillas por caso. En total son 108 corridas, todas óptimas y verificadas. Con $L=15$ el tiempo medio pasa de 8 ms con $|J|=5$ (75 variables) a 0.80 s con $|J|=100$ (1\,500), 9.9 s con $|J|=400$ (6\,000) y 52 s con $|J|=800$ (12\,000 variables; el caso más lento tardó 94 s y 192\,480 nodos). La pendiente en escala log-log del tiempo frente a $|J|$ es de 1.6 a 1.8 para $|J| \geq 25$ en los tres valores de $L$. Es decir, duplicar las alternativas multiplica el tiempo por unas 3 veces, y el número de nodos también crece con $|J|$ (Tabla~\ref{tab:K}, Fig.~\ref{fig:K}). Una explicación plausible es que, al haber más alternativas, hay más combinaciones con costo y $U$ casi iguales, de modo que se necesitan más nodos para probar la optimalidad, y además cada nodo resuelve un problema lineal más grande. La brecha de la raíz promedio es menor con más alternativas (baja de 1.4\,\% con $|J|=5$ a 0.06\,\% con $|J|=400$ y 0.01\,\% con $|J|=800$), pero eso no evita que crezca la búsqueda.
+
+\textbf{Casos extremos.} La instancia más lenta del conjunto original es \texttt{Grande\_13} (0.19 s), que además explora más nodos (4\,110). La más rápida es \texttt{Pequeña\_5} (2.3 ms, 16 variables) y la que menos nodos explora es \texttt{Pequeña\_2} (14). Dentro de un mismo tipo el tiempo varía hasta unas 4 veces según el catálogo sorteado (en las grandes, de 0.05 a 0.19 s): por ejemplo, \texttt{Grande\_11} usa 964 nodos con 427 variables y \texttt{Grande\_12} usa 3\,992 con 502. Por eso el número de variables no determina por sí solo el esfuerzo.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figuras/fig_tiempo_instancias.pdf}
+\caption{Tiempo de ejecución y nodos explorados en las 15 instancias (escala logarítmica).}
+\label{fig:tinst}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.65\linewidth]{figuras/fig_tiempo_vs_vars.pdf}
+\caption{Tiempo de ejecución frente al número de variables binarias (15 instancias).}
+\label{fig:tvars}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figuras/fig_escala_K.pdf}
+\caption{Tiempo y nodos al aumentar el número de alternativas por categoría (promedio de las semillas, escala log-log).}
+\label{fig:K}
+\end{figure}
+
